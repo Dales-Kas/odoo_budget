@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <menuitem id = "budget_main_menu"
+              name="Budget"
+              web_icon="dk_personal_budget,static/description/icon.png"
+              sequence="300"/>
+
+    <menuitem id = "budget_catalog_menu"
+              name="Catalogs"
+              parent = "budget_main_menu"
+              sequence="100"/>
+
+    <menuitem id = "budget_document_menu"
+              name="Budget operations"
+              parent = "budget_main_menu"
+              sequence="101"/>
+
+    <menuitem id = "budget_report_menu"
+              name="Reports"
+              parent = "budget_main_menu"
+              sequence="102"/>
+
+    <menuitem id = "budget_settings_menu"
+              name="Settings"
+              sequence="9999"
+              />
+</odoo>

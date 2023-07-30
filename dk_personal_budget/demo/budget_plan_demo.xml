@@ -1,0 +1,71 @@
+<odoo noupdate="1">
+    <record id="plan_1" model="budget.plan">
+        <field name="date" eval="DateTime.today().replace(day=1) - relativedelta(months=1)"/>
+        <field name="amount">250.00</field>
+        <field name="currency_id" ref="base.USD"/>
+        <field name="article_id" ref="office_supplies"/>
+    </record>
+
+    <record id="plan_2" model="budget.plan">
+        <field name="date" eval="DateTime.today().replace(day=1) - relativedelta(months=1)"/>
+        <field name="amount">400.00</field>
+        <field name="currency_id" ref="base.USD"/>
+        <field name="article_id" ref="marketing_campaigns"/>
+    </record>
+
+    <record id="plan_3" model="budget.plan">
+        <field name="date" eval="DateTime.today().replace(day=1) - relativedelta(months=1)"/>
+        <field name="amount">150.00</field>
+        <field name="currency_id" ref="base.USD"/>
+        <field name="article_id" ref="travel_expenses"/>
+    </record>
+
+    <record id="plan_4" model="budget.plan">
+        <field name="date" eval="DateTime.today().replace(day=1) - relativedelta(months=1)"/>
+        <field name="amount">200.00</field>
+        <field name="currency_id" ref="base.UAH"/>
+        <field name="article_id" ref="office_supplies"/>
+    </record>
+
+    <record id="plan_5" model="budget.plan">
+        <field name="date" eval="DateTime.today().replace(day=1) - relativedelta(months=1)"/>
+        <field name="amount">55.00</field>
+        <field name="currency_id" ref="base.USD"/>
+        <field name="article_id" ref="it_services"/>
+    </record>
+
+    <record id="plan_6" model="budget.plan">
+        <field name="date" eval="DateTime.today().replace(day=1)"/>
+        <field name="amount">200.00</field>
+        <field name="currency_id" ref="base.USD"/>
+        <field name="article_id" ref="office_supplies"/>
+    </record>
+
+    <record id="plan_7" model="budget.plan">
+        <field name="date" eval="DateTime.today().replace(day=1)"/>
+        <field name="amount">500.00</field>
+        <field name="currency_id" ref="base.USD"/>
+        <field name="article_id" ref="travel_expenses"/>
+    </record>
+
+    <record id="plan_8" model="budget.plan">
+        <field name="date" eval="DateTime.today().replace(day=1)"/>
+        <field name="amount">100.00</field>
+        <field name="currency_id" ref="base.USD"/>
+        <field name="article_id" ref="training_development"/>
+    </record>
+
+    <record id="plan_9" model="budget.plan">
+        <field name="date" eval="DateTime.today().replace(day=1)"/>
+        <field name="amount">150.00</field>
+        <field name="currency_id" ref="base.UAH"/>
+        <field name="article_id" ref="office_supplies"/>
+    </record>
+
+    <record id="plan_10" model="budget.plan">
+        <field name="date" eval="DateTime.today().replace(day=1)"/>
+        <field name="amount">100.00</field>
+        <field name="currency_id" ref="base.USD"/>
+        <field name="article_id" ref="it_services"/>
+    </record>
+</odoo>

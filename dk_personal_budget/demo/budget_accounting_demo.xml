@@ -1,0 +1,178 @@
+<odoo noupdate="1">
+
+    <record id="accounting_1" model="budget.accounting">
+            <field name="date" eval="DateTime.today() - timedelta(days=45)"/>
+            <field name="type">income</field>
+            <field name="amount">3050.50</field>
+            <field name="partner_id" ref="partner_john_doe"/>
+            <field name="currency_id" ref="base.UAH"/>
+            <field name="article_id" ref="salary"/>
+            <field name="storage_id" ref="storage_personal_wallet"/>
+            <field name="description">Monthly salary for July 2023</field>
+        </record>
+
+        <record id="accounting_2" model="budget.accounting">
+            <field name="date" eval="DateTime.today() - timedelta(days=42)"/>
+            <field name="type">expense</field>
+            <field name="amount">500.00</field>
+            <field name="partner_id" ref="partner_alice_smith"/>
+            <field name="currency_id" ref="base.UAH"/>
+            <field name="article_id" ref="travel_expenses"/>
+            <field name="storage_id" ref="storage_personal_wallet"/>
+            <field name="description">Monthly rent for June 2023</field>
+        </record>
+
+        <record id="accounting_3" model="budget.accounting">
+            <field name="date" eval="DateTime.today() - timedelta(days=35)"/>
+            <field name="type">income</field>
+            <field name="amount">60.00</field>
+            <field name="partner_id" ref="partner_john_doe"/>
+            <field name="currency_id" ref="base.UAH"/>
+            <field name="article_id" ref="salary"/>
+            <field name="storage_id" ref="storage_personal_wallet"/>
+            <field name="description">Performance bonus for June 2023</field>
+        </record>
+
+       <record id="accounting_4" model="budget.accounting">
+            <field name="date" eval="DateTime.today() - timedelta(days=20)"/>
+            <field name="type">income</field>
+            <field name="amount">2500.00</field>
+            <field name="partner_id" ref="partner_john_doe"/>
+            <field name="currency_id" ref="base.UAH"/>
+            <field name="article_id" ref="salary"/>
+            <field name="storage_id" ref="storage_personal_wallet"/>
+            <field name="description">Monthly salary for June 2023</field>
+        </record>
+
+        <record id="accounting_5" model="budget.accounting">
+            <field name="date" eval="DateTime.today() - timedelta(days=15)"/>
+            <field name="type">expense</field>
+            <field name="amount">800.00</field>
+            <field name="partner_id" ref="partner_alice_smith"/>
+            <field name="currency_id" ref="base.UAH"/>
+            <field name="article_id" ref="travel_expenses"/>
+            <field name="storage_id" ref="storage_personal_wallet"/>
+            <field name="description">Monthly rent for July 2023</field>
+        </record>
+
+        <record id="accounting_6" model="budget.accounting">
+            <field name="date" eval="DateTime.today() - timedelta(days=15)"/>
+            <field name="type">income</field>
+            <field name="amount">500.00</field>
+            <field name="partner_id" ref="partner_john_doe"/>
+            <field name="currency_id" ref="base.UAH"/>
+            <field name="article_id" ref="salary"/>
+            <field name="storage_id" ref="storage_personal_wallet"/>
+            <field name="description">Performance bonus for July 2023</field>
+        </record>
+
+        <record id="accounting_7" model="budget.accounting">
+            <field name="date" eval="DateTime.today() - timedelta(days=10)"/>
+            <field name="type">expense</field>
+            <field name="amount">120.00</field>
+            <field name="partner_id" ref="partner_john_doe"/>
+            <field name="currency_id" ref="base.UAH"/>
+            <field name="article_id" ref="office_supplies"/>
+            <field name="storage_id" ref="storage_personal_wallet"/>
+            <field name="description">Electricity bill for July 2023</field>
+        </record>
+
+        <record id="accounting_8" model="budget.accounting">
+            <field name="date" eval="DateTime.today() - timedelta(days=8)"/>
+            <field name="type">expense</field>
+            <field name="amount">50.00</field>
+            <field name="partner_id" ref="partner_alice_smith"/>
+            <field name="currency_id" ref="base.UAH"/>
+            <field name="article_id" ref="travel_expenses"/>
+            <field name="storage_id" ref="storage_personal_wallet"/>
+            <field name="description">Groceries for July 2023</field>
+        </record>
+
+        <record id="accounting_9" model="budget.accounting">
+            <field name="date" eval="DateTime.today() - timedelta(days=7)"/>
+            <field name="type">expense</field>
+            <field name="amount">60.00</field>
+            <field name="partner_id" ref="partner_alice_smith"/>
+            <field name="currency_id" ref="base.UAH"/>
+            <field name="article_id" ref="travel_expenses"/>
+            <field name="storage_id" ref="storage_personal_wallet"/>
+            <field name="description">Internet bill for July 2023</field>
+        </record>
+
+        <record id="accounting_10" model="budget.accounting">
+            <field name="date" eval="DateTime.today() - timedelta(days=5)"/>
+            <field name="type">expense</field>
+            <field name="amount">40.00</field>
+            <field name="partner_id" ref="partner_john_doe"/>
+            <field name="currency_id" ref="base.UAH"/>
+            <field name="article_id" ref="travel_expenses"/>
+            <field name="storage_id" ref="storage_personal_wallet"/>
+            <field name="description">Gasoline for July 2023</field>
+        </record>
+
+        <record id="accounting_11" model="budget.accounting">
+            <field name="date" eval="DateTime.today() - timedelta(days=3)"/>
+            <field name="type">expense</field>
+            <field name="amount">80.00</field>
+            <field name="partner_id" ref="partner_alice_smith"/>
+            <field name="currency_id" ref="base.UAH"/>
+            <field name="article_id" ref="travel_expenses"/>
+            <field name="storage_id" ref="storage_personal_wallet"/>
+            <field name="description">Dinner out with friends</field>
+        </record>
+
+        <record id="accounting_12" model="budget.accounting">
+            <field name="date" eval="DateTime.today() - timedelta(days=2)"/>
+            <field name="type">expense</field>
+            <field name="amount">30.00</field>
+            <field name="partner_id" ref="partner_john_doe"/>
+            <field name="currency_id" ref="base.UAH"/>
+            <field name="article_id" ref="office_supplies"/>
+            <field name="storage_id" ref="storage_personal_wallet"/>
+            <field name="description">Phone bill for July 2023</field>
+        </record>
+
+        <record id="accounting_13" model="budget.accounting">
+            <field name="date" eval="DateTime.today() - timedelta(days=1)"/>
+            <field name="type">expense</field>
+            <field name="amount">100.00</field>
+            <field name="partner_id" ref="partner_alice_smith"/>
+            <field name="currency_id" ref="base.UAH"/>
+            <field name="article_id" ref="travel_expenses"/>
+            <field name="storage_id" ref="storage_personal_wallet"/>
+            <field name="description">Gift for a friend's birthday</field>
+        </record>
+
+        <record id="accounting_14" model="budget.accounting">
+            <field name="date" eval="DateTime.today() - timedelta(days=1)"/>
+            <field name="type">income</field>
+            <field name="amount">100.00</field>
+            <field name="partner_id" ref="partner_alice_smith"/>
+            <field name="currency_id" ref="base.USD"/>
+            <field name="article_id" ref="archiving"/>
+            <field name="storage_id" ref="storage_family_savings"/>
+            <field name="description">Send to archive</field>
+        </record>
+
+        <record id="accounting_15" model="budget.accounting">
+            <field name="date" eval="DateTime.today() - timedelta(days=1)"/>
+            <field name="type">income</field>
+            <field name="amount">250.00</field>
+            <field name="partner_id" ref="partner_alice_smith"/>
+            <field name="currency_id" ref="base.USD"/>
+            <field name="article_id" ref="archiving"/>
+            <field name="storage_id" ref="storage_vacation_fund"/>
+            <field name="description">Send to archive</field>
+        </record>
+
+        <record id="accounting_16" model="budget.accounting">
+            <field name="date" eval="DateTime.today() - timedelta(days=1)"/>
+            <field name="type">income</field>
+            <field name="amount">50.00</field>
+            <field name="partner_id" ref="partner_alice_smith"/>
+            <field name="currency_id" ref="base.USD"/>
+            <field name="article_id" ref="archiving"/>
+            <field name="storage_id" ref="storage_emergency_fund"/>
+            <field name="description">Send to archive</field>
+        </record>
+</odoo>

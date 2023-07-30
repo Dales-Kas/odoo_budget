@@ -1,0 +1,136 @@
+<odoo>
+
+    <record id="action_budget_report" model="ir.actions.report">
+        <field name="name">Budget Report</field>
+        <field name="model">open.budget.report.wizard</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">dk_personal_budget.budget_report</field>
+        <field name="report_file">dk_personal_budget.budget_report</field>
+        <field name="binding_model_id" ref="model_open_budget_report_wizard"/>
+        <field name="binding_view_types">list</field>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="budget_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.basic_layout">
+                    <div cless="page">
+                        <table style="width: 100%;">
+                            <tr>
+                                <td style="width: 40%;">
+                                    <div class="col-6">
+                                        <img t-att-src="image_data_uri(user.company_id.logo)"
+                                             alt="Logo"/>
+                                        <h1 t-esc="user.company_id.name"/>
+                                        <h5 t-esc="user.company_id.phone"/>
+                                        <h5 t-esc="user.company_id.email"/>
+                                    </div>
+                                </td>
+<!--                                <td style="width: 60%; text-align: right;">-->
+<!--                                    <div>-->
+<!--                                        <h3 style="color: gray;">Doctor:</h3>-->
+<!--                                        <span>-->
+<!--                                            <h1 t-field="doc.name"/>-->
+<!--                                        </span>-->
+<!--                                    </div>-->
+<!--                                    <div>-->
+<!--                                        <h3 style="color: gray;">Specialty:</h3>-->
+<!--                                        <span>-->
+<!--                                            <h1 t-field="doc.specialty"/>-->
+<!--                                        </span>-->
+<!--                                    </div>-->
+<!--                                </td>-->
+                            </tr>
+                        </table>
+
+                        <div class="col-6" style="width: 100%;">
+                            <br/>
+                            <hr style="border: none; border-top: 1px solid black; width: 100%;"/>
+                            <h1>Budget accounting operations:</h1>
+                            <br/>
+                            <h6>
+                                Period from <strong><span t-field="doc.start_date" t-field-options='{"date_format": "dd.MM.yyyy"}'/></strong> to <strong><span t-field="doc.end_date" t-field-options='{"date_format": "dd.MM.yyyy"}'/></strong>
+                            </h6>
+                            <table class="table table-sm">
+                                <thread>
+                                    <tr>
+                                        <th> </th>
+                                        <th>date</th>
+                                        <th>partner</th>
+                                        <th>article</th>
+                                        <th>amount</th>
+                                        <th> </th>
+                                    </tr>
+                                </thread>
+                                <tbody>
+                                    <t t-set="sorted_records" t-value="env['budget.accounting'].search([('date', '&gt;=', doc.start_date), ('date', '&lt;=', doc.end_date)])" t-ordered="1"/>
+<!--                                    <t t-foreach="env['budget.accounting'].search([('date', '&gt;=', doc.start_date), ('date', '&lt;=', doc.end_date)])" t-as="item">-->
+                                    <t t-foreach="sorted_records.sorted(key=lambda r: r.date)" t-ordered="1" t-as="item">
+                                        <tr>
+                                            <td>
+                                                <t t-if="item.type == 'income'">
+                                                    <span style="display: inline-block; width: 20px; height: 20px; border-radius: 50%; background-color: green;"/>
+                                                </t>
+                                                <t t-else="item.type">
+                                                    <span style="display: inline-block; width: 20px; height: 20px; border-radius: 50%; background-color: black;"/>
+                                                </t>
+                                            </td>
+
+                                            <t t-if="item.type == 'income'">
+
+                                                <td>
+                                                    <strong>
+                                                        <span t-esc="item.date" style="color: green;"/>
+                                                    </strong>
+                                                </td>
+                                                <td>
+                                                    <strong>
+                                                        <span t-esc="item.partner_id.name" style="color: green;"/>
+                                                    </strong>
+                                                </td>
+                                                <td>
+                                                    <strong>
+                                                        <span t-esc="item.article_id.name" style="color: green;"/>
+                                                    </strong>
+                                                </td>
+                                                <td>
+                                                    <strong>
+                                                        <span t-esc="item.amount_total" style="color: green;"/>
+                                                    </strong>
+                                                </td>
+                                                <td>
+                                                    <strong>
+                                                        <span t-esc="item.currency_id.symbol" style="color: green;"/>
+                                                    </strong>
+                                                </td>
+                                            </t>
+                                            <t t-else="item.type">
+                                                <td t-esc="item.date"/>
+                                                <td t-esc="item.partner_id.name"/>
+                                                <td t-esc="item.article_id.name"/>
+                                                <td t-esc="item.amount_total"/>
+                                                <td t-esc="item.currency_id.symbol"/>
+                                            </t>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                            <hr style="border: none; border-top: 1px solid black; width: 100%; background-color: black;"/>
+
+                        </div>
+
+                        <div style="text-align:right;">
+                            <p>Created:
+                                <strong>
+                                    <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M')"/>
+                                </strong>
+                            </p>
+                        </div>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

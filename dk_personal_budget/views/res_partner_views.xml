@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.inherit.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="/form/sheet/notebook/page[@name='internal_notes']" position="after">
+                <page name='articles' string="Budget">
+                    <group>
+                        <field name="article_id" string="default article"/>
+                    </group>
+                    <field name="accounting_ids" string="budget operations:"/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="res_partner_kanban_view">
+            <field name="name">res.partner.kanban</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="/kanban/templates/t/div" position="inside">
+                    <field name="article_id" string="default article"/>
+                </xpath>
+            </field>
+    </record>
+
+    <menuitem id="res_partner_menu"
+              name="Partners"
+              parent="budget_catalog_menu"
+              action="base.action_partner_form"
+              sequence="20"/>
+</odoo>

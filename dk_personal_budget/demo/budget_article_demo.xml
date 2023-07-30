@@ -1,0 +1,52 @@
+<odoo noupdate="1">
+
+    <record id="salary" model="budget.article">
+        <field name="name">Salary</field>
+        <field name="color">10</field>
+        <field name="short_name">+</field>
+        <field name="description">fixed regular payment or compensation that employees receive from their employers for the work they perform, typically on a monthly or bi-weekly basis.</field>
+    </record>
+
+    <record id="office_supplies" model="budget.article">
+        <field name="name">Office Supplies</field>
+        <field name="color">6</field>
+        <field name="short_name">Off Supp</field>
+        <field name="description">Essential items and materials used in offices to facilitate daily tasks and operations, such as stationery, writing tools, and organizational materials.</field>
+    </record>
+
+    <record id="travel_expenses" model="budget.article">
+        <field name="name">Travel Expenses</field>
+        <field name="color">1</field>
+        <field name="short_name">Travel</field>
+        <field name="description">the costs incurred during their journeys for business, leisure, or other purposes, which may include transportation, accommodation, meals, and related expenditures.</field>
+    </record>
+
+    <record id="marketing_campaigns" model="budget.article">
+        <field name="name">Marketing Campaigns</field>
+        <field name="color">2</field>
+        <field name="short_name">Mktg</field>
+        <field name="description">Refer to strategic and coordinated efforts by businesses and organizations to promote their products, services, or brand using various marketing channels, such as advertising, social media, email marketing, events, and other promotional activities.</field>
+    </record>
+
+    <record id="training_development" model="budget.article">
+        <field name="name">Training and Development</field>
+        <field name="color">3</field>
+        <field name="short_name">Training</field>
+        <field name="description">Covers expenses related to educational and skill-building activities for personal growth and improvement</field>
+    </record>
+
+    <record id="it_services" model="budget.article">
+        <field name="name">IT Services</field>
+        <field name="color">4</field>
+        <field name="short_name">IT</field>
+        <field name="description">Includes expenses related to information technology services, such as internet connectivity, software subscriptions, and technical support, to meet the technological needs.</field>
+    </record>
+
+    <record id="archiving" model="budget.article">
+        <field name="name">Archiving</field>
+        <field name="color">11</field>
+        <field name="short_name">arch</field>
+        <field name="description">Depositing funds in the archive</field>
+    </record>
+
+</odoo>

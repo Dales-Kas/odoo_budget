@@ -1,0 +1,31 @@
+<odoo noupdate="1">
+    <record id="storage_personal_wallet" model="budget.storage">
+        <field name="name">Personal Wallet</field>
+        <field name="user_id" ref="base.user_demo"/>
+        <field name="currency_id" ref="base.UAH"/>
+    </record>
+
+    <record id="storage_savings_account" model="budget.storage">
+        <field name="name">Savings Account</field>
+        <field name="user_id" ref="base.user_demo"/>
+        <field name="currency_id" ref="base.USD"/>
+    </record>
+
+    <record id="storage_family_savings" model="budget.storage">
+        <field name="name">Family Savings</field>
+        <field name="user_id" ref="base.user_admin"/>
+        <field name="currency_id" ref="base.EUR"/>
+    </record>
+
+    <record id="storage_vacation_fund" model="budget.storage">
+        <field name="name">Vacation Fund</field>
+        <field name="user_id" ref="base.user_admin"/>
+        <field name="currency_id" ref="base.USD"/>
+    </record>
+
+    <record id="storage_emergency_fund" model="budget.storage">
+        <field name="name">Emergency Fund</field>
+        <field name="user_id" ref="base.user_admin"/>
+        <field name="currency_id" ref="base.UAH"/>
+    </record>
+</odoo>

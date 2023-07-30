@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="budget_accounting_view_tree" model="ir.ui.view">
+        <field name="name">budget.accounting.view.tree</field>
+        <field name="model">budget.accounting</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="date"/>
+                <field name="type"/>
+                <field name="amount"/>
+                <field name="currency_id"/>
+                <field name="partner_id"/>
+                <field name="article_id"/>
+                <field name="storage_id"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="budget_accounting_view_pivot" model="ir.ui.view">
+        <field name="name">budget.accounting.view.pivot</field>
+        <field name="model">budget.accounting</field>
+        <field name="arch" type="xml">
+            <pivot>
+                <field name="date" type="col" interval="month"/>
+                <field name="storage_id" type="row"/>
+                <field name="currency_id" type="row"/>
+                <field name="article_id" type="row"/>
+                <field name="partner_id" type="row"/>
+                <field name="amount_in" type="measure"/>
+                <field name="amount_out" type="measure"/>
+                <field name="amount_total" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="budget_accounting_view_form" model="ir.ui.view">
+        <field name="name">budget.accounting.view.form</field>
+        <field name="model">budget.accounting</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div>
+                    <group>
+                        <field name="date"
+                               class="oe_inline"
+                               style="width:80% !important;"/>
+                        <field name="type"
+                               class="oe_inline"
+                               style="width:80% !important;"/>
+                    </group>
+                    <div class="col col-md-8">
+                        <group>
+                            <field name="amount"
+                                   class="oe_inline"
+                                   style="width:80% !important;"/>
+                            <field name="currency_id"
+                                   class="oe_inline"
+                                   style="width:20% !important;"/>
+                        </group>
+                    </div>
+                    <group>
+                        <field name="partner_id"/>
+                        <field name="article_id"/>
+                        <field name="storage_id"/>
+                        <field name="description"/>
+                    </group>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="budget_accounting_view_graph" model="ir.ui.view">
+        <field name="name">budget.accounting.view.graph</field>
+        <field name="model">budget.accounting</field>
+        <field name="arch" type="xml">
+            <graph>
+                <field name="date" interval="month"/>
+                <field name="partner_id"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="budget_accounting_view_search" model="ir.ui.view">
+        <field name="name">budget.accounting.view.search</field>
+        <field name="model">budget.accounting</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="create_uid" string="User's name" filter_domain="[('create_uid.name', 'ilike', self)]"/>
+                <field name="partner_id" string="Partner's name" filter_domain="[('partner_id.name', 'ilike', self)]"/>
+                <field name="article_id" string="Article" filter_domain="[('article_id.name', 'ilike', self)]"/>
+                <filter name="filter_group_by_type" context="{'group_by': 'type'}"/>
+                <filter name="filter_group_by_user_id" context="{'group_by': 'create_uid'}"/>
+                <filter name="filter_group_by_partner_id" context="{'group_by': 'partner_id'}"/>
+                <filter name="filter_group_by_article_id" context="{'group_by': 'article_id'}"/>
+                <filter name="filter_group_by_storage_id" context="{'group_by': 'storage_id'}"/>
+                <filter name="filter_group_by_currency_id" context="{'group_by': 'currency_id'}"/>
+                <searchpanel>
+                    <field name="storage_id" hierarchize="0" enable_counters="1"/>
+                    <field name="partner_id" hierarchize="0" enable_counters="1"/>
+                    <field name="article_id" hierarchize="0" enable_counters="1"/>
+                    <field name="currency_id" hierarchize="0" enable_counters="1"/>
+                    <field name="create_uid" hierarchize="0" enable_counters="1"/>
+                </searchpanel>
+            </search>
+        </field>
+    </record>
+
+     <record id="budget_accounting_action_view_tree" model="ir.actions.act_window">
+        <field name="name">Accounting</field>
+        <field name="res_model">budget.accounting</field>
+        <field name="view_mode">tree,pivot,graph,form</field>
+    </record>
+
+    <menuitem id="budget_accounting_menu"
+              name="Fact"
+              parent="budget_document_menu"
+              action="budget_accounting_action_view_tree"
+              sequence="10"/>
+
+</odoo>

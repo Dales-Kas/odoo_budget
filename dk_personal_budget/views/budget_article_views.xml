@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="budget_article_view_tree" model="ir.ui.view">
+        <field name="name">budget.article.view.tree</field>
+        <field name="model">budget.article</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="short_name"/>
+                <field name="color" invisible="1"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="budget_article_kanban" model="ir.ui.view">
+        <field name="name">budget.article.kanban</field>
+        <field name="model">budget.article</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile">
+                <field name="name"/>
+                <field name="description"/>
+                <field name="color"/>
+                <templates>
+                  <t t-name="kanban-box">
+                      <div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)} oe_kanban_global_click">
+                          <h3 class="o_kanban_card_header_title">
+                            <field name="name" options="{'color_field': 'color'}"/>
+                          </h3>
+                          <div>
+                              <field name="description"/>
+                          </div>
+                          <div class="col-6 o_Kanban_primary_right">
+                              <button name="action_create_operation"
+                                      string="+ add operation"
+                                      type="object"
+                                      class="btn-primary"/>
+                          </div>
+                          <div class="o_dropdown_kanban dropdown">
+                              <a class="dropdown-toggle btn"
+                                 role="button"
+                                 data-toggle="dropdown"
+                                 href="#">
+                                  <span class="fa fa-ellipsis-v" title="munu"
+                                        aria-hidden="true"/>
+                              </a>
+                              <div class="o_kanban_card_manage_setting row mt16">
+                                <div class="dropdown-menu" role="menu">
+                                    <t t-if="widget.editable">
+                                        <a role="menuitem"
+                                           type="edit"
+                                            class="dropdown-item">
+                                            Edit
+                                        </a>
+                                    </t>
+                                    <t t-if="widget.deletable">
+                                        <a role="menuitem"
+                                           type="delete"
+                                            class="dropdown-item">
+                                            Delete
+                                        </a>
+                                    </t>
+                                    <ul class="oe_kanban_colorpicker"
+                                        data-field="color"/>
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+                  </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="budget_article_view_form" model="ir.ui.view">
+        <field name="name">budget.article.view.form</field>
+        <field name="model">budget.article</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="short_name"/>
+                        <field name="description"/>
+                    </group>
+                    <notebook>
+                        <page string="Accounting operations:">
+                            <field name="accounting_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="budget_article_action_view_tree" model="ir.actions.act_window">
+        <field name="name">Article</field>
+        <field name="res_model">budget.article</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+    <menuitem id="budget_article_menu"
+              name="Articles"
+              parent="budget_catalog_menu"
+              action="budget_article_action_view_tree"
+              sequence="20"/>
+
+</odoo>

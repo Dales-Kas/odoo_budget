@@ -1,0 +1,35 @@
+<odoo>
+    <record id="view_budget_report_form" model="ir.ui.view">
+        <field name="name">open.budget.report.wizard.form</field>
+        <field name="model">open.budget.report.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="Generate Report" type="object" name="generate_report"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_budget_report_wizard" model="ir.actions.act_window">
+        <field name="name">Budget report</field>
+        <field name="res_model">open.budget.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="menu_budget_report_wizard" model="ir.ui.menu">
+        <field name="name">Budget report</field>
+        <field name="parent_id" ref="dk_personal_budget.budget_report_menu"/>
+        <field name="action" ref="action_budget_report_wizard"/>
+        <field name="sequence" eval="3"/>
+    </record>
+
+</odoo>

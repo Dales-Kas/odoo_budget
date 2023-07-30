@@ -1,0 +1,42 @@
+<odoo noupdate="1">
+
+    <record id="partner_john_doe" model="res.partner">
+        <field name="name">John Doe</field>
+        <field name="email">john.doe@example.com</field>
+        <field name="article_id" ref="office_supplies"/>
+        <field name="image_1920" type="base64"
+               file="dk_personal_budget/static/demo_photo/user1.jpg"/>
+    </record>
+
+    <record id="partner_alice_smith" model="res.partner">
+        <field name="name">Alice Smith</field>
+        <field name="email">alice.smith@example.com</field>
+        <field name="article_id" ref="travel_expenses"/>
+        <field name="image_1920" type="base64"
+               file="dk_personal_budget/static/demo_photo/user2.jpg"/>
+    </record>
+
+    <record id="partner_bob_johnson" model="res.partner">
+        <field name="name">Bob Johnson</field>
+        <field name="email">bob.johnson@example.com</field>
+        <field name="article_id" ref="marketing_campaigns"/>
+        <field name="image_1920" type="base64"
+               file="dk_personal_budget/static/demo_photo/user3.jpg"/>
+    </record>
+
+    <record id="partner_mary_lee" model="res.partner">
+        <field name="name">Mary Lee</field>
+        <field name="email">mary.lee@example.com</field>
+        <field name="article_id" ref="training_development"/>
+        <field name="image_1920" type="base64"
+               file="dk_personal_budget/static/demo_photo/user4.jpg"/>
+    </record>
+
+    <record id="partner_david_brown" model="res.partner">
+        <field name="name">David Brown</field>
+        <field name="email">david.brown@example.com</field>
+        <field name="article_id" ref="it_services"/>
+        <field name="image_1920" type="base64"
+               file="dk_personal_budget/static/demo_photo/user5.jpg"/>
+    </record>
+</odoo>

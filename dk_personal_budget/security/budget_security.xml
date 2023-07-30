@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="budget_storage_rule_user" model="ir.rule">
+        <field name="name">Budget users can only view own storage</field>
+        <field name="model_id" ref="dk_personal_budget.model_budget_storage"/>
+        <field name="domain_force">[('user_id', '!=', user.id)]</field>
+        <field name="groups" eval="[(4, ref('group_budget_user'))]"/>
+        <field name="perm_read" eval="False"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="budget_accounting_rule_user" model="ir.rule">
+        <field name="name">Budget users can only view own operations</field>
+        <field name="model_id" ref="dk_personal_budget.model_budget_accounting"/>
+        <field name="domain_force">[('create_uid', '=', user.id)]</field>
+        <field name="groups" eval="[(4, ref('group_budget_user'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="budget_storage_rule_admin" model="ir.rule">
+        <field name="name">Budget administrators have full rights on storage</field>
+        <field name="model_id" ref="dk_personal_budget.model_budget_storage"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('group_budget_user'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="budget_accounting_rule_admin" model="ir.rule">
+        <field name="name">Budget administrators have full rights on accounting operation</field>
+        <field name="model_id" ref="dk_personal_budget.model_budget_accounting"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('group_budget_user'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+</odoo>

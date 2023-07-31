@@ -34,6 +34,7 @@
         'demo/budget_storage_demo.xml',
         'demo/budget_accounting_demo.xml',
         'demo/budget_plan_demo.xml',
+        'demo/res_users_demo.xml',
     ],
     'price': 10,
     'currency': 'EUR',

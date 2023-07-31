@@ -9,6 +9,7 @@
     <record id="group_budget_user" model="res.groups">
         <field name="name">User</field>
         <field name="category_id" ref="category_budget"/>
+        <field name="users" eval="[Command.link(ref('base.user_demo'))]"/>
         <field name="comment">Users of the Budget</field>
     </record>
 

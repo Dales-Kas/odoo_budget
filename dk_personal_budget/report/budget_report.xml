@@ -27,20 +27,6 @@
                                         <h5 t-esc="user.company_id.email"/>
                                     </div>
                                 </td>
-<!--                                <td style="width: 60%; text-align: right;">-->
-<!--                                    <div>-->
-<!--                                        <h3 style="color: gray;">Doctor:</h3>-->
-<!--                                        <span>-->
-<!--                                            <h1 t-field="doc.name"/>-->
-<!--                                        </span>-->
-<!--                                    </div>-->
-<!--                                    <div>-->
-<!--                                        <h3 style="color: gray;">Specialty:</h3>-->
-<!--                                        <span>-->
-<!--                                            <h1 t-field="doc.specialty"/>-->
-<!--                                        </span>-->
-<!--                                    </div>-->
-<!--                                </td>-->
                             </tr>
                         </table>
 
@@ -50,7 +36,7 @@
                             <h1>Budget accounting operations:</h1>
                             <br/>
                             <h6>
-                                Period from <strong><span t-field="doc.start_date" t-field-options='{"date_format": "dd.MM.yyyy"}'/></strong> to <strong><span t-field="doc.end_date" t-field-options='{"date_format": "dd.MM.yyyy"}'/></strong>
+                                Period from <strong><span t-field="doc.start_date"/></strong> to <strong><span t-field="doc.end_date"/></strong>
                             </h6>
                             <table class="table table-sm">
                                 <thread>
@@ -65,7 +51,6 @@
                                 </thread>
                                 <tbody>
                                     <t t-set="sorted_records" t-value="env['budget.accounting'].search([('date', '&gt;=', doc.start_date), ('date', '&lt;=', doc.end_date)])" t-ordered="1"/>
-<!--                                    <t t-foreach="env['budget.accounting'].search([('date', '&gt;=', doc.start_date), ('date', '&lt;=', doc.end_date)])" t-as="item">-->
                                     <t t-foreach="sorted_records.sorted(key=lambda r: r.date)" t-ordered="1" t-as="item">
                                         <tr>
                                             <td>

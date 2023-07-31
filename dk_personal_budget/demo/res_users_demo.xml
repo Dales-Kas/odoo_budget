@@ -1,0 +1,7 @@
+<odoo noupdate="1">
+
+    <record id="base.user_admin" model="res.users">
+        <field name="storage_id" ref="storage_personal_wallet"/>
+    </record>
+
+</odoo>

@@ -8,7 +8,7 @@
             <field name="currency_id" ref="base.UAH"/>
             <field name="article_id" ref="salary"/>
             <field name="storage_id" ref="storage_personal_wallet"/>
-            <field name="description">Monthly salary for July 2023</field>
+            <field name="description">Monthly salary</field>
         </record>
 
         <record id="accounting_2" model="budget.accounting">
@@ -19,7 +19,7 @@
             <field name="currency_id" ref="base.UAH"/>
             <field name="article_id" ref="travel_expenses"/>
             <field name="storage_id" ref="storage_personal_wallet"/>
-            <field name="description">Monthly rent for June 2023</field>
+            <field name="description">Monthly rent</field>
         </record>
 
         <record id="accounting_3" model="budget.accounting">
@@ -30,7 +30,7 @@
             <field name="currency_id" ref="base.UAH"/>
             <field name="article_id" ref="salary"/>
             <field name="storage_id" ref="storage_personal_wallet"/>
-            <field name="description">Performance bonus for June 2023</field>
+            <field name="description">Performance bonus</field>
         </record>
 
        <record id="accounting_4" model="budget.accounting">
@@ -41,7 +41,7 @@
             <field name="currency_id" ref="base.UAH"/>
             <field name="article_id" ref="salary"/>
             <field name="storage_id" ref="storage_personal_wallet"/>
-            <field name="description">Monthly salary for June 2023</field>
+            <field name="description">Monthly salary</field>
         </record>
 
         <record id="accounting_5" model="budget.accounting">
@@ -52,7 +52,7 @@
             <field name="currency_id" ref="base.UAH"/>
             <field name="article_id" ref="travel_expenses"/>
             <field name="storage_id" ref="storage_personal_wallet"/>
-            <field name="description">Monthly rent for July 2023</field>
+            <field name="description">Monthly rent</field>
         </record>
 
         <record id="accounting_6" model="budget.accounting">
@@ -63,7 +63,7 @@
             <field name="currency_id" ref="base.UAH"/>
             <field name="article_id" ref="salary"/>
             <field name="storage_id" ref="storage_personal_wallet"/>
-            <field name="description">Performance bonus for July 2023</field>
+            <field name="description">Performance bonus</field>
         </record>
 
         <record id="accounting_7" model="budget.accounting">
@@ -74,7 +74,7 @@
             <field name="currency_id" ref="base.UAH"/>
             <field name="article_id" ref="office_supplies"/>
             <field name="storage_id" ref="storage_personal_wallet"/>
-            <field name="description">Electricity bill for July 2023</field>
+            <field name="description">Electricity bill</field>
         </record>
 
         <record id="accounting_8" model="budget.accounting">
@@ -85,7 +85,7 @@
             <field name="currency_id" ref="base.UAH"/>
             <field name="article_id" ref="travel_expenses"/>
             <field name="storage_id" ref="storage_personal_wallet"/>
-            <field name="description">Groceries for July 2023</field>
+            <field name="description">Groceries</field>
         </record>
 
         <record id="accounting_9" model="budget.accounting">
@@ -96,7 +96,7 @@
             <field name="currency_id" ref="base.UAH"/>
             <field name="article_id" ref="travel_expenses"/>
             <field name="storage_id" ref="storage_personal_wallet"/>
-            <field name="description">Internet bill for July 2023</field>
+            <field name="description">Internet bill</field>
         </record>
 
         <record id="accounting_10" model="budget.accounting">
@@ -107,7 +107,7 @@
             <field name="currency_id" ref="base.UAH"/>
             <field name="article_id" ref="travel_expenses"/>
             <field name="storage_id" ref="storage_personal_wallet"/>
-            <field name="description">Gasoline for July 2023</field>
+            <field name="description">Gasoline</field>
         </record>
 
         <record id="accounting_11" model="budget.accounting">
@@ -129,7 +129,7 @@
             <field name="currency_id" ref="base.UAH"/>
             <field name="article_id" ref="office_supplies"/>
             <field name="storage_id" ref="storage_personal_wallet"/>
-            <field name="description">Phone bill for July 2023</field>
+            <field name="description">Phone bill</field>
         </record>
 
         <record id="accounting_13" model="budget.accounting">

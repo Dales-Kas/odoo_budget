@@ -4,7 +4,7 @@
     'author': 'Dales Kas',
     'website': "https://github.com/Dales-Kas",
     'category': 'Extra Tools',
-    'version': '16.0.0.0.0',
+    'version': '16.0.1.0.0',
     'license': 'LGPL-3',
 
     # any module necessary for this one to work correctly
